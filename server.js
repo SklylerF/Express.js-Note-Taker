@@ -37,7 +37,9 @@ app.get('/notes', (req, res)=> {
 app.post('/api/notes', (req,res) =>{
     const newNote = {title:req.body.title, text:req.body.text, id:uniqid() }
     tests.push(newNote)
-    fs.writeFile('./db/db.json', JSON.stringify(tests))
+    fs.writeFile('./db/db.json', JSON.stringify(tests), (err)=>{
+        console.log('this did not work');
+    })
     res.send(tests)
 });
 
