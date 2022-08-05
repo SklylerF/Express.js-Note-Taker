@@ -41,7 +41,7 @@ app.post('/api/notes', (req,res) =>{
         if (err) {console.log(err);}
           
         else {
-          console.log("File written successfully\n");
+          console.log("File written successfully");
         }
     })
     res.send(tests)
