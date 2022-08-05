@@ -38,8 +38,8 @@ app.post('/api/notes', (req,res) =>{
     const newNote = {title:req.body.title, text:req.body.text, id:uniqid() }
     tests.push(newNote)
     fs.writeFile('./db/db.json', JSON.stringify(tests), (err) => {
-        if (err)
-          console.log(err);
+        if (err) {console.log(err);}
+          
         else {
           console.log("File written successfully\n");
         }
